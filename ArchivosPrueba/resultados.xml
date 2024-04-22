@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<respuesta>
+	<cliente>
+		<creados>2</creados>
+		<actualizados>12</actualizados>
+	</cliente>
+	<banco>
+		<creados>2</creados>
+		<actualizados>12</actualizados>
+	</banco>
+</respuesta>

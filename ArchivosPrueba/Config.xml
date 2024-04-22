@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <config>
+        <clientes>
+                <cliente>
+                    <NIT>A012</NIT>
+                    <nombre>Cliente1</nombre>
+                </cliente>
+                <cliente>
+                    <NIT>A013</NIT>
+                    <nombre>Cliente2</nombre>
+                </cliente>
+        </clientes>
+        <bancos>
+                <banco>
+                    <codigo>B1</codigo>
+                    <nombre>Banco1</nombre>
+                </banco>
+                <banco>
+                    <codigo>C2</codigo>
+                    <nombre>Banco2</nombre>
+                </banco>
+        </bancos>
+    </config>
