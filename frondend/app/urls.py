@@ -9,4 +9,5 @@ urlpatterns = [
     path('CargaTransac', views.CargarT, name='CargaTransac'),
     path('ConsultEst', views.ConsultEst, name='ConsultEst'),
     path('ConsultIng', views.ConsultIng, name='ConsultIng'),
+    path('cargarXML2/', views.cargarXML2, name='cargarXML2'),
 ]

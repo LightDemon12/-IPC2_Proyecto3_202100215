@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transacciones>
+	<factura>
+		<nuevasFacturas>1</nuevasFacturas>
+		<facturasDuplicadas>1</facturasDuplicadas>
+	</factura>
+	<pago>
+		<nuevosPagos>1</nuevosPagos>
+		<pagosDuplicados>1</pagosDuplicados>
+	</pago>
+</transacciones>

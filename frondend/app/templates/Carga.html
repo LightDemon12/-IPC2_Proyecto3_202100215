@@ -6,23 +6,36 @@
 </head>
 <body>
     {% include 'navbar.html' %}
-    <div class="container mt-5">
-        <h1 class="text-center">Cargar Configuración</h1>
-        <form>
-            <div class="mb-3">
-                <label for="configFile" class="form-label">Selecciona el archivo de configuración</label>
-                <input type="file" class="form-control" id="configFile">
+    <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Cargar Archivo de Registros</h1>
+                <p>Por favor, selecciona el archivo XML con los registros de las mascotas que deseas cargar.</p>
+                <form method="post" action='/cargarXML/' enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="file" name="file" accept=".xml" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cargar</button>
+                </form>
             </div>
-            <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-up" viewBox="0 0 16 16">
-                        <path d="M8.5 11.5a.5.5 0 0 1-1 0V7.707L6.354 8.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 7.707z"/>
-                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
-                    </svg>
-                    Cargar
-                </button>
+            <div class="col">
+            <h1 class="text-center">Revisión</h1>
+                <form>
+                    {% csrf_token %}
+                    {% if content %}
+                    <div class="form-group">
+                        <textarea class="form-control w-100" id="revision" rows="10" cols="100">{{ content }}</textarea>
+                    </div>
+                    {% else %}
+                    <div class="form-group">
+                        <textarea class="form-control w-100" id="revision" rows="10" cols="100"></textarea>
+                    </div>
+                    {% endif %}
+                    <a href="/download" class="btn btn-primary">Recargar Datos</a>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </body>
 </html>
