@@ -6,7 +6,7 @@ import os
 import re
 from collections import defaultdict
 from Estructuras.estructuras import Cliente, Banco, Factura, Pago
-
+from datetime import datetime
 
 app = Flask(__name__)
 CORS(app)
@@ -67,20 +67,29 @@ def procesar_elementoT(elemento):
             configuracion.append(facturas[numeroFactura])
     elif tipo_elemento == 'pago':
         codigoBanco = elemento.find('codigoBanco').text
-        fecha = re.findall(r'\d+/\d+/\d+', elemento.find('fecha').text)[0]  # Extrae solo los números y los signos /
+        fecha_str = elemento.find('fecha').text
+        fecha = datetime.strptime(fecha_str, '%d/%m/%Y')  # Convierte la cadena de texto en un objeto datetime
         NITcliente = elemento.find('NITcliente').text
         valor = re.findall(r'\d+', elemento.find('valor').text)[0]  # Extrae solo los números
         if NITcliente not in clientes:
             # Si el NITcliente no coincide con ningún cliente existente, incrementa el contador de errores
             contadores[tipo_elemento]['pagosConError'] += 1
-        elif codigoBanco in pagos:
-            # Si el pago ya existe, incrementa el contador de pagos duplicados
+        elif codigoBanco not in bancos:
+            # Si el codigoBanco no coincide con ningún banco existente, incrementa el contador de errores
+            contadores[tipo_elemento]['pagosConError'] += 1
+        elif (NITcliente, fecha.date()) in [(pago.nit_cliente, datetime.strptime(pago.fecha, '%d/%m/%Y').date()) for lista_pagos in pagos.values() for pago in lista_pagos]:
+            # Si el cliente ya hizo un pago en la misma fecha (sin considerar la hora), incrementa el contador de pagos duplicados
             contadores[tipo_elemento]['pagosDuplicados'] += 1
         else:
             # Si el pago es nuevo y el NITcliente coincide con un cliente existente, crea una nueva entrada
-            pagos[codigoBanco] = Pago(codigoBanco, fecha, NITcliente, valor)
+            nuevo_pago = Pago(codigoBanco, fecha_str, NITcliente, valor)
+            if codigoBanco not in pagos:
+                pagos[codigoBanco] = [nuevo_pago]
+            else:
+                pagos[codigoBanco].append(nuevo_pago)
             contadores[tipo_elemento]['nuevosPagos'] += 1
-            configuracion.append(pagos[codigoBanco])
+            configuracion.append(nuevo_pago)
+
 
 @app.route('/', methods=['GET'])
 def home():
@@ -164,19 +173,25 @@ def limpiar_datos():
 
 
 @app.route('/devolverEstadoCuenta', methods=['GET'])
-def devolver_estado_cuenta():
+@app.route('/devolverEstadoCuenta/<nit_cliente>', methods=['GET'])
+def devolver_estado_cuenta(nit_cliente=None):
     # Crea una lista para almacenar los estados de las cuentas
     estados_cuenta = []
 
     # Recorre la lista de clientes
     for nit, cliente in clientes.items():
-        # Crea un diccionario para almacenar el estado de la cuenta del cliente
-        estado_cuenta_cliente = {
-            'NIT': nit,
-            'nombre': cliente.nombre,
-        }
-        # Añade el estado de la cuenta a la lista
-        estados_cuenta.append(estado_cuenta_cliente)
+        # Solo procesa los clientes que coincidan con el NIT proporcionado, si se proporcionó
+        if nit_cliente is None or nit == nit_cliente:
+            # Crea un diccionario para almacenar el estado de la cuenta del cliente
+            estado_cuenta_cliente = {
+                'NIT': nit,
+                'nombre': cliente.nombre,
+            }
+            # Añade el estado de la cuenta a la lista
+            estados_cuenta.append(estado_cuenta_cliente)
+
+    # Ordena la lista de estados de cuenta de los clientes por el campo 'NIT'
+    estados_cuenta.sort(key=lambda x: x['NIT'])
 
     # Recorre la lista de bancos
     for codigo, banco in bancos.items():
@@ -188,39 +203,51 @@ def devolver_estado_cuenta():
         # Añade los datos del banco a la lista
         estados_cuenta.append(estado_cuenta_banco)
 
+    # Ordena la lista de estados de cuenta de los bancos por el campo 'codigo'
+    estados_cuenta.sort(key=lambda x: x.get('codigo', ''))
+
     # Devuelve la lista de estados de las cuentas
     return jsonify(estados_cuenta), 200
 
-
 @app.route('/devolverResumenPagos', methods=['GET'])
-def devolver_resumen_pagos():
+@app.route('/devolverResumenPagos/<nit_cliente>', methods=['GET'])
+def devolver_resumen_pagos(nit_cliente=None):
     # Crea listas para almacenar los detalles de las facturas y pagos
     detalles_facturas = []
     detalles_pagos = []
 
     # Recorre la lista de facturas
     for numeroFactura, factura in facturas.items():
-        # Crea un diccionario para almacenar los detalles de la factura
-        detalles_factura = {
-            'numeroFactura': numeroFactura,
-            'nit_cliente': factura.nit_cliente,
-            'fecha': factura.fecha,
-            'valor': factura.valor
-        }
-        # Añade los detalles de la factura a la lista
-        detalles_facturas.append(detalles_factura)
+        # Solo procesa las facturas que coincidan con el NIT proporcionado, si se proporcionó
+        if nit_cliente is None or factura.nit_cliente == nit_cliente:
+            # Crea un diccionario para almacenar los detalles de la factura
+            detalles_factura = {
+                'numeroFactura': numeroFactura,
+                'nit_cliente': factura.nit_cliente,
+                'fecha': factura.fecha,
+                'valor': factura.valor
+            }
+            # Añade los detalles de la factura a la lista
+            detalles_facturas.append(detalles_factura)
 
     # Recorre la lista de pagos
-    for codigoBanco, pago in pagos.items():
-        # Crea un diccionario para almacenar los detalles del pago
-        detalles_pago = {
-            'codigoBanco': codigoBanco,
-            'fecha': pago.fecha,
-            'nit_cliente': pago.nit_cliente,
-            'valor': pago.valor
-        }
-        # Añade los detalles del pago a la lista
-        detalles_pagos.append(detalles_pago)
+    for codigoBanco, lista_pagos in pagos.items():
+        for pago in lista_pagos:
+            # Solo procesa los pagos que coincidan con el NIT proporcionado, si se proporcionó
+            if nit_cliente is None or pago.nit_cliente == nit_cliente:
+                # Crea un diccionario para almacenar los detalles del pago
+                detalles_pago = {
+                    'codigoBanco': codigoBanco,
+                    'fecha': pago.fecha,
+                    'nit_cliente': pago.nit_cliente,
+                    'valor': pago.valor
+                }
+                # Añade los detalles del pago a la lista
+                detalles_pagos.append(detalles_pago)
+
+    # Ordena las listas por el campo 'nit_cliente'
+    detalles_facturas.sort(key=lambda x: x['nit_cliente'])
+    detalles_pagos.sort(key=lambda x: x['nit_cliente'])
 
     # Crea un diccionario para almacenar el resumen de pagos
     resumen_pagos = {
@@ -231,5 +258,94 @@ def devolver_resumen_pagos():
     # Devuelve el resumen de pagos
     return jsonify(resumen_pagos), 200
 
+
+
+@app.route('/downloadC', methods=['GET'])
+def download_fileC():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(base_dir, '../ArchivosPrueba/resultados.xml')
+    response = send_file(file_path, as_attachment=True)
+    response.headers["Content-Disposition"] = "attachment; filename=resultados.xml"
+    return response
+
+@app.route('/downloadT', methods=['GET'])
+def download_fileT():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(base_dir, '../ArchivosPrueba/resultadosT.xml')
+    response = send_file(file_path, as_attachment=True)
+    response.headers["Content-Disposition"] = "attachment; filename=resultadosT.xml"
+    return response
+
+@app.route('/results', defaults={'nit_cliente': None})
+@app.route('/results/<nit_cliente>', methods=['GET'])
+def get_results(nit_cliente):
+    resumen_clientes = {}
+
+    # Recorre la lista de facturas
+    for numeroFactura, factura in facturas.items():
+        nit = factura.nit_cliente  # Usa una variable diferente para el NIT del cliente
+        if nit not in resumen_clientes:
+            resumen_clientes[nit] = {
+                'facturas': [],
+                'pagos': [],
+                'total_facturas': 0,
+                'total_pagos': 0
+            }
+        factura_dict = {
+            'numeroFactura': factura.numero_factura,
+            'nit_cliente': factura.nit_cliente,
+            'fecha': factura.fecha,
+            'valor': factura.valor
+        }
+        resumen_clientes[nit]['facturas'].append(factura_dict)
+        resumen_clientes[nit]['total_facturas'] += int(factura.valor)
+
+    # Recorre la lista de pagos
+    for codigoBanco, lista_pagos in pagos.items():
+        for pago in lista_pagos:
+            nit = pago.nit_cliente  # Usa una variable diferente para el NIT del cliente
+            if nit not in resumen_clientes:
+                resumen_clientes[nit] = {
+                    'facturas': [],
+                    'pagos': [],
+                    'total_facturas': 0,
+                    'total_pagos': 0
+                }
+            pago_dict = {
+                'codigoBanco': pago.codigo_banco,
+                'fecha': pago.fecha,
+                'nit_cliente': pago.nit_cliente,
+                'valor': pago.valor
+            }
+            resumen_clientes[nit]['pagos'].append(pago_dict)
+            resumen_clientes[nit]['total_pagos'] += int(pago.valor)
+
+    # Ordena las facturas y calcula el saldo para cada cliente
+    for nit, resumen in resumen_clientes.items():
+        resumen['facturas'] = sorted(resumen['facturas'], key=lambda x: x['fecha'], reverse=True)
+        saldo = resumen['total_facturas'] - resumen['total_pagos']
+        resumen['saldo'] = 'Saldo a pagar: ' + str(saldo) if saldo > 0 else 'Saldo a favor: ' + str(-saldo)
+        resumen['nit_cliente'] = nit  # Agrega el NIT del cliente al resumen
+
+
+    if nit_cliente is not None:
+        # Si se proporcionó un NIT de cliente, devuelve solo el resumen de ese cliente
+        cliente_resumen = resumen_clientes.get(nit_cliente)
+        if cliente_resumen is None:
+            return jsonify({'error': 'Cliente no encontrado'}), 404
+        return jsonify(cliente_resumen)
+
+    # Si no se proporcionó un NIT de cliente, devuelve el resumen de todos los clientes
+
+    # Convierte el diccionario en una lista de tuplas y la ordena por la clave (NIT del cliente)
+    resumen_clientes = sorted(resumen_clientes.items(), key=lambda x: x[0])
+
+    # Extrae solo los valores (resúmenes de los clientes) de la lista de tuplas
+    resumen_clientes = [cliente_resumen for nit, cliente_resumen in resumen_clientes]
+
+    return jsonify(resumen_clientes)
+
+
 if __name__ == '__main__':
     app.run(host='localhost', port='5000',debug=True)
+

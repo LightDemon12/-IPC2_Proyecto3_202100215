@@ -9,8 +9,8 @@
     <div class="container d-flex align-items-center justify-content-center" style="height: 100vh;">
         <div class="row">
             <div class="col">
-                <h1 class="text-center">Cargar Archivo de Registros</h1>
-                <p>Por favor, selecciona el archivo XML con los registros de las mascotas que deseas cargar.</p>
+                <h1 class="text-center">Cargar Archivo de Transacciones</h1>
+                <p>Por favor, selecciona el archivo XML con las Transacciones  que deseas cargar.</p>
                 <form method="post" action='/cargarXML2/' enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
@@ -32,7 +32,7 @@
                         <textarea class="form-control w-100" id="revision" rows="10" cols="100"></textarea>
                     </div>
                     {% endif %}
-                    <a href="/download" class="btn btn-primary">Recargar Datos</a>
+                    <a href="/downloadT" class="btn btn-primary">Recargar Datos</a>
                 </form>
             </div>
         </div>

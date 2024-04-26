@@ -75,3 +75,56 @@ def cargarXML2(request):
         return render(request, 'CargaTransac.html')
     else:
         return render(request, 'CargaTransac.html')
+    
+
+
+def downloadC(request):
+    context = {
+        'content': None
+    }
+
+    response = requests.get('http://localhost:5000/downloadC')
+    if response.status_code == 200:
+        xml_response = response.text  # Lee la respuesta como texto
+        dom = parseString(xml_response)  # Parsea el XML
+        pretty_xml = dom.toprettyxml()  # Serializa el XML con indentación
+        pretty_xml = re.sub(r'\n\s*\n', '\n', pretty_xml)  # Elimina espacios en blanco adicionales
+        context['content'] = pretty_xml  # Guarda la respuesta XML en el contexto
+        return render(request, 'Carga.html', context)
+    else:
+        return render(request, 'Carga.html')
+
+def downloadT(request):
+    context = {
+        'content': None
+    }
+
+    response = requests.get('http://localhost:5000/downloadT')
+    if response.status_code == 200:
+        xml_response = response.text  # Lee la respuesta como texto
+        dom = parseString(xml_response)  # Parsea el XML
+        pretty_xml = dom.toprettyxml()  # Serializa el XML con indentación
+        pretty_xml = re.sub(r'\n\s*\n', '\n', pretty_xml)  # Elimina espacios en blanco adicionales
+        context['content'] = pretty_xml  # Guarda la respuesta XML en el contexto
+        return render(request, 'CargaTransac.html', context)
+    else:
+        return render(request, 'CargaTransac.html')
+    
+
+def posts(request, nit_cliente=None):
+    context = {'posts': None}
+
+    # Construye la URL de la API
+    url = 'http://localhost:5000/results'
+    if nit_cliente is not None:
+        url += '/' + nit_cliente
+
+    # Realiza la solicitud a la API
+    response = requests.get(url)
+
+    # Si la respuesta es exitosa, actualiza 'posts' en el contexto con la respuesta JSON
+    if response.status_code == 200:
+        context['posts'] = response.json()
+
+    # Renderiza la plantilla 'ConsultEst.html' con el contexto
+    return render(request, 'ConsultEst.html', context)

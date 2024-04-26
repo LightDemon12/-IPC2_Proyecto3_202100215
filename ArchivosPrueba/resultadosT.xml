@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <transacciones>
 	<factura>
-		<nuevasFacturas>1</nuevasFacturas>
-		<facturasDuplicadas>1</facturasDuplicadas>
+		<nuevasFacturas>4</nuevasFacturas>
 	</factura>
 	<pago>
-		<nuevosPagos>1</nuevosPagos>
-		<pagosDuplicados>1</pagosDuplicados>
+		<nuevosPagos>5</nuevosPagos>
 	</pago>
 </transacciones>

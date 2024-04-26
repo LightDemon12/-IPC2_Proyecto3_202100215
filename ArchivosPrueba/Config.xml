@@ -6,8 +6,16 @@
                     <nombre>Cliente1</nombre>
                 </cliente>
                 <cliente>
-                    <NIT>A013</NIT>
-                    <nombre>Cliente2</nombre>
+                    <NIT>B013</NIT>
+                    <nombre>Cliente3</nombre>
+                </cliente>
+                <cliente>
+                    <NIT>Z014</NIT>
+                    <nombre>Cliente4</nombre>
+                </cliente>
+                <cliente>
+                    <NIT>G019</NIT>
+                    <nombre>Cliente9</nombre>
                 </cliente>
         </clientes>
         <bancos>
