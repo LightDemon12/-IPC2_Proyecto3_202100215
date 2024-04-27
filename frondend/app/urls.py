@@ -14,4 +14,9 @@ urlpatterns = [
     path('downloadT', views.downloadT, name='download_fileT'),
     path('downloadC', views.downloadC, name='download_fileC'),
     path('posts', views.posts, name='posts'),
+    path('searchNIT', views.searchNIT, name='searchNIT'),
+    path('clear/', views.clear_animals, name='clear_animals'),
+    path('sumarMeses/<int:mes>', views.sumar_meses, name='sumar_meses'),
 ]
+
+

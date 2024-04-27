@@ -8,6 +8,8 @@ from collections import defaultdict
 from Estructuras.estructuras import Cliente, Banco, Factura, Pago
 from datetime import datetime
 
+
+
 app = Flask(__name__)
 CORS(app)
 
@@ -160,7 +162,7 @@ def grabar_transaccion():
     return xml_pretty_str
 
 
-@app.route('/limpiarDatos', methods=['DELETE'])
+@app.route('/clear', methods=['DELETE'])
 def limpiar_datos():
     # Vacía los diccionarios y la lista
     clientes.clear()
@@ -276,9 +278,8 @@ def download_fileT():
     response.headers["Content-Disposition"] = "attachment; filename=resultadosT.xml"
     return response
 
-@app.route('/results', defaults={'nit_cliente': None})
-@app.route('/results/<nit_cliente>', methods=['GET'])
-def get_results(nit_cliente):
+@app.route('/results', methods=['GET'])
+def get_all_results():
     resumen_clientes = {}
 
     # Recorre la lista de facturas
@@ -327,16 +328,6 @@ def get_results(nit_cliente):
         resumen['saldo'] = 'Saldo a pagar: ' + str(saldo) if saldo > 0 else 'Saldo a favor: ' + str(-saldo)
         resumen['nit_cliente'] = nit  # Agrega el NIT del cliente al resumen
 
-
-    if nit_cliente is not None:
-        # Si se proporcionó un NIT de cliente, devuelve solo el resumen de ese cliente
-        cliente_resumen = resumen_clientes.get(nit_cliente)
-        if cliente_resumen is None:
-            return jsonify({'error': 'Cliente no encontrado'}), 404
-        return jsonify(cliente_resumen)
-
-    # Si no se proporcionó un NIT de cliente, devuelve el resumen de todos los clientes
-
     # Convierte el diccionario en una lista de tuplas y la ordena por la clave (NIT del cliente)
     resumen_clientes = sorted(resumen_clientes.items(), key=lambda x: x[0])
 
@@ -344,6 +335,105 @@ def get_results(nit_cliente):
     resumen_clientes = [cliente_resumen for nit, cliente_resumen in resumen_clientes]
 
     return jsonify(resumen_clientes)
+
+
+    
+
+@app.route('/resultsnit/<nit_cliente>', methods=['GET'])
+def get_single_result(nit_cliente):
+    resumen_clientes = {}
+
+    # Recorre la lista de facturas
+    for numeroFactura, factura in facturas.items():
+        nit = factura.nit_cliente  # Usa una variable diferente para el NIT del cliente
+        if nit not in resumen_clientes:
+            resumen_clientes[nit] = {
+                'facturas': [],
+                'pagos': [],
+                'total_facturas': 0,
+                'total_pagos': 0
+            }
+        factura_dict = {
+            'numeroFactura': factura.numero_factura,
+            'nit_cliente': factura.nit_cliente,
+            'fecha': factura.fecha,
+            'valor': factura.valor
+        }
+        resumen_clientes[nit]['facturas'].append(factura_dict)
+        resumen_clientes[nit]['total_facturas'] += int(factura.valor)
+
+    # Recorre la lista de pagos
+    for codigoBanco, lista_pagos in pagos.items():
+        for pago in lista_pagos:
+            nit = pago.nit_cliente  # Usa una variable diferente para el NIT del cliente
+            if nit not in resumen_clientes:
+                resumen_clientes[nit] = {
+                    'facturas': [],
+                    'pagos': [],
+                    'total_facturas': 0,
+                    'total_pagos': 0
+                }
+            pago_dict = {
+                'codigoBanco': pago.codigo_banco,
+                'fecha': pago.fecha,
+                'nit_cliente': pago.nit_cliente,
+                'valor': pago.valor
+            }
+            resumen_clientes[nit]['pagos'].append(pago_dict)
+            resumen_clientes[nit]['total_pagos'] += int(pago.valor)
+
+    # Ordena las facturas y calcula el saldo para cada cliente
+    for nit, resumen in resumen_clientes.items():
+        resumen['facturas'] = sorted(resumen['facturas'], key=lambda x: x['fecha'], reverse=True)
+        saldo = resumen['total_facturas'] - resumen['total_pagos']
+        resumen['saldo'] = 'Saldo a pagar: ' + str(saldo) if saldo > 0 else 'Saldo a favor: ' + str(-saldo)
+        resumen['nit_cliente'] = nit  # Agrega el NIT del cliente al resumen
+
+    # Si se proporcionó un NIT de cliente, devuelve solo el resumen de ese cliente
+    cliente_resumen = resumen_clientes.get(nit_cliente)
+    if cliente_resumen is None:
+        return jsonify({'error': 'Cliente no encontrado'}), 404
+    return jsonify(cliente_resumen)
+
+@app.route('/sumarMeses/<int:mes>', methods=['GET'])
+def sumar_meses(mes):
+    # Asegúrate de que el mes es válido
+    if mes < 1 or mes > 12:
+        return jsonify({'error': 'Mes inválido'}), 400
+
+    # Calcula los meses y años anteriores
+    año_actual = datetime.now().year
+    mes_anterior1 = mes - 1 if mes > 1 else 12
+    año_anterior1 = año_actual if mes > 1 else año_actual - 1
+    mes_anterior2 = mes_anterior1 - 1 if mes_anterior1 > 1 else 12
+    año_anterior2 = año_anterior1 if mes_anterior1 > 1 else año_anterior1 - 1
+
+    # Crea un diccionario para almacenar las sumas de facturas y pagos por mes
+    total_facturas_por_mes = {mes: 0, mes_anterior1: 0, mes_anterior2: 0}
+    total_pagos_por_mes = {mes: {}, mes_anterior1: {}, mes_anterior2: {}}
+
+    # Filtra y suma las facturas y pagos de los meses relevantes
+    for factura in facturas.values():
+        mes_factura = datetime.strptime(factura.fecha, '%d/%m/%Y').month
+        if mes_factura in total_facturas_por_mes:
+            total_facturas_por_mes[mes_factura] += int(factura.valor)
+
+    for codigo_banco, lista_pagos in pagos.items():
+        for pago in lista_pagos:
+            mes_pago = datetime.strptime(pago.fecha, '%d/%m/%Y').month
+            if mes_pago in total_pagos_por_mes:
+                if codigo_banco not in total_pagos_por_mes[mes_pago]:
+                    total_pagos_por_mes[mes_pago][codigo_banco] = 0
+                total_pagos_por_mes[mes_pago][codigo_banco] += int(pago.valor)
+
+    # Prepara la respuesta
+    response = {'total_facturas_por_mes': total_facturas_por_mes, 'total_pagos_por_mes': total_pagos_por_mes}
+
+    # Imprime la respuesta
+    print(response)
+
+    # Devuelve la respuesta
+    return jsonify(response), 200
 
 
 if __name__ == '__main__':

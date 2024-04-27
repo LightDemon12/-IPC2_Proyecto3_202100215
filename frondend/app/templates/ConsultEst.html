@@ -10,20 +10,36 @@
 {% include "NavBar.html" %}
 <body>
     <div class="container mt-5">
-        <h2 class="text-center">Resumen de Clientes</h2>
+        <h2 class="text-center mb-4">Resumen de Clientes</h2>
+        <div class="container mt-5">
+            <h2 class="text-center">Realiza una búsqueda: </h2>
+        
+            <form action="/searchNIT" method="GET" enctype="multipart/form-data" class="mb-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">NIT</span>
+                        <input type="text" id="search" name="search" class="mr-5 form-control" placeholder="NIT Cliente" aria-label="NIT Cliente" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary mr-3">Buscar</button>
+                        </div>
+                </div>
+            </form>
         {% if posts %}
             {% for cliente in posts %}
-                <div class="card mb-3">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">NIT Cliente: {{cliente.nit_cliente}}</h5>
-                        <p class="card-text">Total Facturas: {{cliente.total_facturas}}</p>
-                        <p class="card-text">Total Pagos: {{cliente.total_pagos}}</p>
-                        <p class="card-text">Saldo: {{cliente.saldo}}</p>
-                        <h6 class="mt-3">Facturas</h6>
+                <div class="card mb-4 shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 fw-normal">NIT Cliente: {{cliente.nit_cliente}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">{{cliente.saldo}}</h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Total Facturas: {{cliente.total_facturas}}</li>
+                            <li>Total Pagos: {{cliente.total_pagos}}</li>
+                        </ul>
+                        <h5 class="mb-3">Facturas</h5>
                         {% for factura in cliente.facturas %}
                             <p>Numero Factura: {{factura.numeroFactura}}, Fecha: {{factura.fecha}}, Valor: {{factura.valor}}</p>
                         {% endfor %}
-                        <h6 class="mt-3">Pagos</h6>
+                        <h5 class="mt-3 mb-3">Pagos</h5>
                         {% for pago in cliente.pagos %}
                             <p>Codigo Banco: {{pago.codigoBanco}}, Fecha: {{pago.fecha}}, Valor: {{pago.valor}}</p>
                         {% endfor %}

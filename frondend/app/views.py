@@ -3,7 +3,8 @@ import requests
 from .forms import FileForm
 from xml.dom.minidom import parseString 
 import re
-
+from django.http import JsonResponse
+import json
 
 
 API = 'http://localhost:5000'
@@ -128,3 +129,63 @@ def posts(request, nit_cliente=None):
 
     # Renderiza la plantilla 'ConsultEst.html' con el contexto
     return render(request, 'ConsultEst.html', context)
+
+def searchNIT(request):
+    if request.method == 'GET':
+        nit_cliente = request.GET['search']
+        print(nit_cliente)
+        try:
+            response = requests.get(API+f'/resultsnit/{nit_cliente}')
+            if response.status_code == 200:
+                resumen_clientes = response.json()
+                context = {
+                    'posts': resumen_clientes
+                }
+                return render(request, 'ConsultEstSingle.html', context)
+            else:
+                return render(request, 'ConsultEstSingle.html')
+        except Exception as e:
+            print(e)
+
+        return render(request, 'ConsultEstSingle.html')
+    
+def clear_animals(request):
+    response = requests.delete('http://localhost:5000/clear')
+    if response.status_code == 200:
+        return render(request, 'clear_success.html', {'alert_message': '¡Bien hecho! Los registros se han borrado con éxito.'})
+    else:
+        return render(request, 'clear_error.html', {'alert_message': '¡Error! Hubo un problema al intentar borrar los registros.'})
+    
+
+import requests
+from django.http import JsonResponse
+
+def sumar_meses(request, mes):
+    # Realiza una solicitud al backend para obtener los datos
+    response = requests.get(f'http://localhost:5000/sumarMeses/{mes}')
+
+    # Imprime la respuesta recibida
+    print(f"Response received: {response.text}")
+
+    # Comprueba si la solicitud fue exitosa
+    if response.status_code == 200:
+        # Intenta parsear los datos como JSON y captura cualquier error
+        try:
+            data = response.json()
+        except json.JSONDecodeError:
+            print("Error decoding JSON")
+            return JsonResponse({'error': 'Hubo un problema al decodificar los datos del backend.'})
+
+        # Transforma los datos
+        labels = sorted(data['total_facturas_por_mes'].keys())
+        total_facturas = [data['total_facturas_por_mes'][label] for label in labels]
+        total_pagos = [sum(data['total_pagos_por_mes'].get(label, {}).values()) for label in labels]
+
+        # Imprime los datos que se están enviando a la plantilla
+        print(f"Data sent to template: labels={labels}, total_facturas={total_facturas}, total_pagos={total_pagos}")
+
+        # Si la solicitud fue exitosa, renderiza la plantilla con los datos transformados
+        return render(request, 'ConsultIng.html', {'data': json.dumps({'labels': labels, 'total_facturas': total_facturas, 'total_pagos': total_pagos})})
+    else:
+        # Si hubo un error, devuelve un mensaje de error
+        return JsonResponse({'error': 'Hubo un problema al obtener los datos del backend.'})
