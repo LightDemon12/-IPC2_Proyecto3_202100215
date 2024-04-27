@@ -179,13 +179,17 @@ def sumar_meses(request, mes):
         # Transforma los datos
         labels = sorted(data['total_facturas_por_mes'].keys())
         total_facturas = [data['total_facturas_por_mes'][label] for label in labels]
-        total_pagos = [sum(data['total_pagos_por_mes'].get(label, {}).values()) for label in labels]
+
+        # Obtiene la lista de bancos de los datos de pagos
+        bancos = set(banco for pagos_mes in data['total_pagos_por_mes'].values() for banco in pagos_mes.keys())
+
+        total_pagos_por_banco = {banco: [data['total_pagos_por_mes'].get(label, {}).get(banco, 0) for label in labels] for banco in bancos}
 
         # Imprime los datos que se están enviando a la plantilla
-        print(f"Data sent to template: labels={labels}, total_facturas={total_facturas}, total_pagos={total_pagos}")
+        print(f"Data sent to template: labels={labels}, total_facturas={total_facturas}, total_pagos_por_banco={total_pagos_por_banco}")
 
         # Si la solicitud fue exitosa, renderiza la plantilla con los datos transformados
-        return render(request, 'ConsultIng.html', {'data': json.dumps({'labels': labels, 'total_facturas': total_facturas, 'total_pagos': total_pagos})})
+        return render(request, 'ConsultIng.html', {'data': json.dumps({'labels': labels, 'total_facturas': total_facturas, 'total_pagos_por_banco': total_pagos_por_banco})})
     else:
         # Si hubo un error, devuelve un mensaje de error
         return JsonResponse({'error': 'Hubo un problema al obtener los datos del backend.'})

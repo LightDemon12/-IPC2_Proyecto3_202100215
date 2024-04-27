@@ -51,23 +51,21 @@
                     const labels = data.labels.map(label => monthNames[label - 1]);
         
                     const ctx = document.getElementById('myChart').getContext('2d');
+        
+                    const datasets = Object.keys(data.total_pagos_por_banco).map((banco, index) => ({
+                        label: `Total pagos - ${banco}`,
+                        data: data.total_pagos_por_banco[banco],
+                        backgroundColor: `rgba(${index * 50}, ${index * 50}, ${index * 50}, 0.5)`, // Genera un color de fondo diferente para cada banco
+                        borderColor: `rgba(${index * 50}, ${index * 50}, ${index * 50}, 1)`, // Genera un color de borde diferente para cada banco
+                        borderWidth: 2, // Aumenta el ancho del borde
+                        barPercentage: 0.5 // Reduce el ancho de las barras
+                    }));
+        
                     new Chart(ctx, {
                         type: 'bar',
                         data: {
                             labels: labels,
-                            datasets: [{
-                                label: 'Total facturas',
-                                data: data.total_facturas,
-                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                                borderColor: 'rgba(75, 192, 192, 1)',
-                                borderWidth: 1
-                            }, {
-                                label: 'Total pagos',
-                                data: data.total_pagos,
-                                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                                borderColor: 'rgba(255, 99, 132, 1)',
-                                borderWidth: 1
-                            }]
+                            datasets: datasets
                         },
                         options: {
                             scales: {

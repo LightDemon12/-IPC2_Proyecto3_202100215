@@ -2,8 +2,10 @@
 <respuesta>
 	<cliente>
 		<creados>4</creados>
+		<actualizados>4</actualizados>
 	</cliente>
 	<banco>
 		<creados>2</creados>
+		<actualizados>2</actualizados>
 	</banco>
 </respuesta>

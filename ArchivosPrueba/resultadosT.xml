@@ -2,8 +2,10 @@
 <transacciones>
 	<factura>
 		<nuevasFacturas>4</nuevasFacturas>
+		<facturasDuplicadas>8</facturasDuplicadas>
 	</factura>
 	<pago>
-		<nuevosPagos>5</nuevosPagos>
+		<nuevosPagos>9</nuevosPagos>
+		<pagosDuplicados>8</pagosDuplicados>
 	</pago>
 </transacciones>
