@@ -52,14 +52,36 @@
         
                     const ctx = document.getElementById('myChart').getContext('2d');
         
+                    const colors = [
+                        'rgba(255, 99, 132, 0.5)',  // rojo
+                        'rgba(54, 162, 235, 0.5)',  // azul
+                        'rgba(255, 206, 86, 0.5)',  // amarillo
+                        'rgba(75, 192, 192, 0.5)',  // verde
+                        'rgba(153, 102, 255, 0.5)', // morado
+                        'rgba(255, 159, 64, 0.5)'   // naranja
+                        // Agrega más colores si necesitas
+                    ];
+        
+                    const borderColors = colors.map(color => color.replace('0.5', '1')); // Crea colores de borde más oscuros
+        
                     const datasets = Object.keys(data.total_pagos_por_banco).map((banco, index) => ({
                         label: `Total pagos - ${banco}`,
                         data: data.total_pagos_por_banco[banco],
-                        backgroundColor: `rgba(${index * 50}, ${index * 50}, ${index * 50}, 0.5)`, // Genera un color de fondo diferente para cada banco
-                        borderColor: `rgba(${index * 50}, ${index * 50}, ${index * 50}, 1)`, // Genera un color de borde diferente para cada banco
+                        backgroundColor: colors[index % colors.length], // Selecciona un color de la lista
+                        borderColor: borderColors[index % borderColors.length], // Selecciona un color de borde de la lista
                         borderWidth: 2, // Aumenta el ancho del borde
                         barPercentage: 0.5 // Reduce el ancho de las barras
                     }));
+        
+                    // Agrega el conjunto de datos de las facturas
+                    datasets.push({
+                        label: 'Total facturas',
+                        data: data.total_facturas,
+                        backgroundColor: 'rgba(0, 123, 255, 0.5)', // Cambia el color de fondo a azul
+                        borderColor: 'rgba(0, 123, 255, 1)', // Cambia el color del borde a azul
+                        borderWidth: 2, // Aumenta el ancho del borde
+                        barPercentage: 0.5 // Reduce el ancho de las barras
+                    });
         
                     new Chart(ctx, {
                         type: 'bar',
