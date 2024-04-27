@@ -43,11 +43,18 @@
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(html, 'text/html');
                     const data = JSON.parse(doc.getElementById('data').textContent);
+        
+                    // Array con los nombres de los meses
+                    const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        
+                    // Usa los índices de las labels para buscar los nombres de los meses correspondientes
+                    const labels = data.labels.map(label => monthNames[label - 1]);
+        
                     const ctx = document.getElementById('myChart').getContext('2d');
                     new Chart(ctx, {
                         type: 'bar',
                         data: {
-                            labels: data.labels,
+                            labels: labels,
                             datasets: [{
                                 label: 'Total facturas',
                                 data: data.total_facturas,

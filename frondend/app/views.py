@@ -5,7 +5,7 @@ from xml.dom.minidom import parseString
 import re
 from django.http import JsonResponse
 import json
-
+from itertools import chain
 
 API = 'http://localhost:5000'
 
