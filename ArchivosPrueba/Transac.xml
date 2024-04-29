@@ -45,7 +45,7 @@
             <valor>8000</valor>
         </pago>
         <pago>
-            <codigoBanco>C2</codigoBanco>
+            <codigoBanco>V2</codigoBanco>
             <fecha>28/04/2024</fecha>
             <NITcliente>Z014</NITcliente>
             <valor>8500</valor>
@@ -63,8 +63,26 @@
             <valor>8900</valor>
         </pago>
                 <pago>
-            <codigoBanco>C2</codigoBanco>
+            <codigoBanco>A2</codigoBanco>
+            <fecha>27/04/2024</fecha>
+            <NITcliente>G019</NITcliente>
+            <valor>8900</valor>
+        </pago>
+                        <pago>
+            <codigoBanco>V2</codigoBanco>
+            <fecha>27/03/2024</fecha>
+            <NITcliente>G019</NITcliente>
+            <valor>8900</valor>
+        </pago>
+                        <pago>
+            <codigoBanco>A2</codigoBanco>
             <fecha>27/02/2024</fecha>
+            <NITcliente>G019</NITcliente>
+            <valor>8900</valor>
+        </pago>
+                        <pago>
+            <codigoBanco>B1</codigoBanco>
+            <fecha>23/02/2024</fecha>
             <NITcliente>G019</NITcliente>
             <valor>8900</valor>
         </pago>

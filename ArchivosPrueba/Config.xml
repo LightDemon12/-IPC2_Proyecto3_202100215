@@ -27,5 +27,13 @@
                     <codigo>C2</codigo>
                     <nombre>Banco2</nombre>
                 </banco>
+                <banco>
+                    <codigo>A2</codigo>
+                    <nombre>Banco2</nombre>
+                </banco>
+                <banco>
+                    <codigo>V2</codigo>
+                    <nombre>Banco2</nombre>
+                </banco>
         </bancos>
     </config>
