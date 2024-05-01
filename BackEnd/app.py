@@ -49,41 +49,46 @@ def procesar_elemento(elemento):
 facturas = {}
 pagos = {}
 
+def normalizar_NIT(NIT):
+    return re.sub(r'\W', '-', NIT)  # Reemplaza todos los signos no alfanuméricos por un guion
+
+def normalizar_fecha(fecha):
+    return re.sub(r'[-/\.]', '/', fecha)  # Reemplaza todos los guiones, puntos y barras por barras
+
 def procesar_elementoT(elemento):
     tipo_elemento = elemento.tag
     if tipo_elemento == 'factura':
         numeroFactura = elemento.find('numeroFactura').text
-        NITcliente = elemento.find('NITcliente').text
-        fecha = re.findall(r'\d+/\d+/\d+', elemento.find('fecha').text)[0]  # Extrae solo los números y los signos /
+        NITcliente = normalizar_NIT(elemento.find('NITcliente').text)  # Normaliza el NIT del cliente
+        fecha_str = re.findall(r'\b\d{1,2}[-/\.]\d{1,2}[-/\.]\d{4}\b', normalizar_fecha(elemento.find('fecha').text))[0]  # Normaliza y extrae la fecha
         valor = re.findall(r'\d+', elemento.find('valor').text)[0]  # Extrae solo los números
         if NITcliente not in clientes:
-            # Si el NITcliente no coincide con ningún cliente existente, incrementa el contador de errores
             contadores[tipo_elemento]['facturasConError'] += 1
         elif numeroFactura in facturas:
-            # Si la factura ya existe, incrementa el contador de facturas duplicadas
             contadores[tipo_elemento]['facturasDuplicadas'] += 1
         else:
-            # Si la factura es nueva y el NITcliente coincide con un cliente existente, crea una nueva entrada
-            facturas[numeroFactura] = Factura(numeroFactura, NITcliente, fecha, valor)
+            facturas[numeroFactura] = Factura(numeroFactura, NITcliente, fecha_str, valor)
             contadores[tipo_elemento]['nuevasFacturas'] += 1
             configuracion.append(facturas[numeroFactura])
     elif tipo_elemento == 'pago':
         codigoBanco = elemento.find('codigoBanco').text
-        fecha_str = elemento.find('fecha').text
-        fecha = datetime.strptime(fecha_str, '%d/%m/%Y')  # Convierte la cadena de texto en un objeto datetime
-        NITcliente = elemento.find('NITcliente').text
+        fecha_str = normalizar_fecha(elemento.find('fecha').text)  # Normaliza la fecha
+        fecha_str = re.findall(r'\b\d{1,2}[-/\.]\d{1,2}[-/\.]\d{4}\b', fecha_str)[0]  # Extrae la fecha
+        for fmt in ('%d/%m/%Y', '%d-%m-%Y', '%d.%m.%Y'):
+            try:
+                fecha = datetime.strptime(fecha_str, fmt)
+                break
+            except ValueError:
+                pass
+        NITcliente = normalizar_NIT(elemento.find('NITcliente').text)  # Normaliza el NIT del cliente
         valor = re.findall(r'\d+', elemento.find('valor').text)[0]  # Extrae solo los números
         if NITcliente not in clientes:
-            # Si el NITcliente no coincide con ningún cliente existente, incrementa el contador de errores
             contadores[tipo_elemento]['pagosConError'] += 1
         elif codigoBanco not in bancos:
-            # Si el codigoBanco no coincide con ningún banco existente, incrementa el contador de errores
             contadores[tipo_elemento]['pagosConError'] += 1
         elif (NITcliente, fecha.date()) in [(pago.nit_cliente, datetime.strptime(pago.fecha, '%d/%m/%Y').date()) for lista_pagos in pagos.values() for pago in lista_pagos]:
-            # Si el cliente ya hizo un pago en la misma fecha (sin considerar la hora), incrementa el contador de pagos duplicados
             contadores[tipo_elemento]['pagosDuplicados'] += 1
         else:
-            # Si el pago es nuevo y el NITcliente coincide con un cliente existente, crea una nueva entrada
             nuevo_pago = Pago(codigoBanco, fecha_str, NITcliente, valor)
             if codigoBanco not in pagos:
                 pagos[codigoBanco] = [nuevo_pago]

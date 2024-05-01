@@ -1,0 +1,1207 @@
+<?xml version='1.0' encoding='utf-8'?>
+<config>
+   <clientes>
+       <cliente>
+           <NIT>12345670-1</NIT>
+           <nombre>Sofía Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345670-2</NIT>
+           <nombre>Elena García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345670-3</NIT>
+           <nombre>Manuel Martínez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345670-4</NIT>
+           <nombre>Elena Sánchez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345670-5</NIT>
+           <nombre>José Moreno</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345670-6</NIT>
+           <nombre>José Jiménez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345670-7</NIT>
+           <nombre>Isabel Muñoz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345670-8</NIT>
+           <nombre>Ana González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345670-9</NIT>
+           <nombre>Pedro González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345671-0</NIT>
+           <nombre>Isabel Jiménez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345671-1</NIT>
+           <nombre>Ana Pérez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345671-2</NIT>
+           <nombre>Elena Gutiérrez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345671-3</NIT>
+           <nombre>Carlos Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345671-4</NIT>
+           <nombre>Ana Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345671-5</NIT>
+           <nombre>Rosa Gutiérrez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345671-6</NIT>
+           <nombre>Carlos Fernández</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345671-7</NIT>
+           <nombre>Isabel Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345671-8</NIT>
+           <nombre>Laura López</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345671-9</NIT>
+           <nombre>Isabel Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345672-0</NIT>
+           <nombre>Carlos Martínez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345672-1</NIT>
+           <nombre>Isabel Jiménez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345672-2</NIT>
+           <nombre>Marta Ruiz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345672-3</NIT>
+           <nombre>Luis Gutiérrez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345672-4</NIT>
+           <nombre>Ana Álvarez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345672-5</NIT>
+           <nombre>Luis Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345672-6</NIT>
+           <nombre>Pablo Alonso</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345672-7</NIT>
+           <nombre>José Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345672-8</NIT>
+           <nombre>Carlos Díaz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345672-9</NIT>
+           <nombre>María Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345673-0</NIT>
+           <nombre>Ana López</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345673-1</NIT>
+           <nombre>Rosa Alonso</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345673-2</NIT>
+           <nombre>Sofía Alonso</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345673-3</NIT>
+           <nombre>Pedro Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345673-4</NIT>
+           <nombre>Diego García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345673-5</NIT>
+           <nombre>Sofía García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345673-6</NIT>
+           <nombre>Pablo Ramírez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345673-7</NIT>
+           <nombre>Juan Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345673-8</NIT>
+           <nombre>Marta Muñoz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345673-9</NIT>
+           <nombre>Juan Moreno</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345674-0</NIT>
+           <nombre>Juan Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345674-1</NIT>
+           <nombre>Carlos Ramírez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345674-2</NIT>
+           <nombre>Isabel Martínez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345674-3</NIT>
+           <nombre>Sofía Moreno</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345674-4</NIT>
+           <nombre>Fernando Jiménez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345674-5</NIT>
+           <nombre>Juan Alonso</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345674-6</NIT>
+           <nombre>Sofía Sánchez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345674-7</NIT>
+           <nombre>Pedro Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345674-8</NIT>
+           <nombre>Carmen Álvarez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345674-9</NIT>
+           <nombre>José García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345675-0</NIT>
+           <nombre>Diego Gutiérrez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345675-1</NIT>
+           <nombre>Manuel Díaz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345675-2</NIT>
+           <nombre>María Sánchez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345675-3</NIT>
+           <nombre>Carmen García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345675-4</NIT>
+           <nombre>Antonio Díaz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345675-5</NIT>
+           <nombre>Lucía Alonso</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345675-6</NIT>
+           <nombre>Manuel Gutiérrez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345675-7</NIT>
+           <nombre>Antonio Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345675-8</NIT>
+           <nombre>Laura Pérez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345675-9</NIT>
+           <nombre>José Álvarez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345676-0</NIT>
+           <nombre>Manuel Martínez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345676-1</NIT>
+           <nombre>Juan Sánchez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345676-2</NIT>
+           <nombre>Rosa Sánchez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345676-3</NIT>
+           <nombre>Marta López</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345676-4</NIT>
+           <nombre>Marta Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345676-5</NIT>
+           <nombre>Pablo Moreno</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345676-6</NIT>
+           <nombre>Sofía Álvarez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345676-7</NIT>
+           <nombre>Isabel Ruiz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345676-8</NIT>
+           <nombre>Antonio Moreno</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345676-9</NIT>
+           <nombre>Marta González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345677-0</NIT>
+           <nombre>Pablo Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345677-1</NIT>
+           <nombre>Antonio López</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345677-2</NIT>
+           <nombre>Luis Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345677-3</NIT>
+           <nombre>José Pérez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345677-4</NIT>
+           <nombre>Sofía Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345677-5</NIT>
+           <nombre>Rosa Gutiérrez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345677-6</NIT>
+           <nombre>Carlos Sánchez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345677-7</NIT>
+           <nombre>José Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345677-8</NIT>
+           <nombre>Fernando González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345677-9</NIT>
+           <nombre>Pablo Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345678-0</NIT>
+           <nombre>Luis Ruiz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345678-1</NIT>
+           <nombre>Carmen Sánchez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345678-2</NIT>
+           <nombre>Ana Jiménez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345678-3</NIT>
+           <nombre>Laura Ramírez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345678-4</NIT>
+           <nombre>Juan Díaz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345678-5</NIT>
+           <nombre>María Álvarez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345678-6</NIT>
+           <nombre>Ana Jiménez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345678-7</NIT>
+           <nombre>Elena Ruiz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345678-8</NIT>
+           <nombre>María Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345678-9</NIT>
+           <nombre>Pedro Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345679-0</NIT>
+           <nombre>Antonio Álvarez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345679-1</NIT>
+           <nombre>Carmen García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345679-2</NIT>
+           <nombre>Pablo Ruiz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345679-3</NIT>
+           <nombre>José Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345679-4</NIT>
+           <nombre>Juan Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345679-5</NIT>
+           <nombre>Isabel González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345679-6</NIT>
+           <nombre>Carlos Muñoz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345679-7</NIT>
+           <nombre>Luis Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345679-8</NIT>
+           <nombre>Laura Muñoz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>12345679-9</NIT>
+           <nombre>Carlos Díaz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456710-0</NIT>
+           <nombre>Carmen Álvarez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456710-1</NIT>
+           <nombre>Lucía Muñoz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456710-2</NIT>
+           <nombre>Laura Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456710-3</NIT>
+           <nombre>Ana Álvarez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456710-4</NIT>
+           <nombre>Elena Fernández</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456710-5</NIT>
+           <nombre>Carmen Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456710-6</NIT>
+           <nombre>Rosa Muñoz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456710-7</NIT>
+           <nombre>Juan Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456710-8</NIT>
+           <nombre>Laura Ruiz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456710-9</NIT>
+           <nombre>José Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456711-0</NIT>
+           <nombre>Isabel Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456711-1</NIT>
+           <nombre>Lucía Gutiérrez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456711-2</NIT>
+           <nombre>Marta García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456711-3</NIT>
+           <nombre>Ana Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456711-4</NIT>
+           <nombre>Rosa Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456711-5</NIT>
+           <nombre>María López</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456711-6</NIT>
+           <nombre>Carmen Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456711-7</NIT>
+           <nombre>Pablo García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456711-8</NIT>
+           <nombre>Sofía Ruiz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456711-9</NIT>
+           <nombre>Manuel González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456712-0</NIT>
+           <nombre>Laura Díaz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456712-1</NIT>
+           <nombre>Isabel Martínez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456712-2</NIT>
+           <nombre>Diego Alonso</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456712-3</NIT>
+           <nombre>Carlos Martínez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456712-4</NIT>
+           <nombre>Pedro Ruiz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456712-5</NIT>
+           <nombre>Ana González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456712-6</NIT>
+           <nombre>Fernando Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456712-7</NIT>
+           <nombre>Rosa Alonso</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456712-8</NIT>
+           <nombre>Lucía Fernández</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456712-9</NIT>
+           <nombre>José Sánchez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456713-0</NIT>
+           <nombre>Laura Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456713-1</NIT>
+           <nombre>José Jiménez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456713-2</NIT>
+           <nombre>Ana Alonso</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456713-3</NIT>
+           <nombre>Rosa Álvarez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456713-4</NIT>
+           <nombre>Sofía Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456713-5</NIT>
+           <nombre>Diego Ramírez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456713-6</NIT>
+           <nombre>Pedro García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456713-7</NIT>
+           <nombre>Manuel Moreno</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456713-8</NIT>
+           <nombre>María García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456713-9</NIT>
+           <nombre>Marta Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456714-0</NIT>
+           <nombre>Marta Muñoz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456714-1</NIT>
+           <nombre>Ana Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456714-2</NIT>
+           <nombre>Carmen Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456714-3</NIT>
+           <nombre>Sofía González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456714-4</NIT>
+           <nombre>Diego Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456714-5</NIT>
+           <nombre>Lucía González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456714-6</NIT>
+           <nombre>Pedro Ramírez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456714-7</NIT>
+           <nombre>Pablo González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456714-8</NIT>
+           <nombre>Ana Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456714-9</NIT>
+           <nombre>Pedro Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456715-0</NIT>
+           <nombre>Carlos Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456715-1</NIT>
+           <nombre>Luis Ruiz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456715-2</NIT>
+           <nombre>Fernando Fernández</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456715-3</NIT>
+           <nombre>Rosa Muñoz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456715-4</NIT>
+           <nombre>Carlos Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456715-5</NIT>
+           <nombre>Antonio Ramírez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456715-6</NIT>
+           <nombre>Rosa López</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456715-7</NIT>
+           <nombre>Elena Fernández</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456715-8</NIT>
+           <nombre>Rosa Pérez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456715-9</NIT>
+           <nombre>Luis Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456716-0</NIT>
+           <nombre>Carmen Ruiz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456716-1</NIT>
+           <nombre>Fernando Álvarez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456716-2</NIT>
+           <nombre>Sofía González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456716-3</NIT>
+           <nombre>José Jiménez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456716-4</NIT>
+           <nombre>Manuel García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456716-5</NIT>
+           <nombre>Isabel Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456716-6</NIT>
+           <nombre>Elena García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456716-7</NIT>
+           <nombre>Ana Muñoz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456716-8</NIT>
+           <nombre>Pablo Jiménez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456716-9</NIT>
+           <nombre>Rosa Martínez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456717-0</NIT>
+           <nombre>Juan García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456717-1</NIT>
+           <nombre>Luis Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456717-2</NIT>
+           <nombre>Rosa García</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456717-3</NIT>
+           <nombre>Carlos Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456717-4</NIT>
+           <nombre>Rosa Gutiérrez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456717-5</NIT>
+           <nombre>Lucía Gutiérrez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456717-6</NIT>
+           <nombre>Lucía Álvarez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456717-7</NIT>
+           <nombre>Carmen Fernández</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456717-8</NIT>
+           <nombre>Rosa Martínez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456717-9</NIT>
+           <nombre>Elena Jiménez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456718-0</NIT>
+           <nombre>Pedro González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456718-1</NIT>
+           <nombre>Marta Rodríguez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456718-2</NIT>
+           <nombre>Manuel Gutiérrez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456718-3</NIT>
+           <nombre>Manuel Gutiérrez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456718-4</NIT>
+           <nombre>Diego Martínez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456718-5</NIT>
+           <nombre>Sofía López</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456718-6</NIT>
+           <nombre>Luis Moreno</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456718-7</NIT>
+           <nombre>Lucía Ramírez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456718-8</NIT>
+           <nombre>Fernando González</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456718-9</NIT>
+           <nombre>Fernando Jiménez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456719-0</NIT>
+           <nombre>José Torres</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456719-1</NIT>
+           <nombre>Rosa Pérez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456719-2</NIT>
+           <nombre>Diego Sánchez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456719-3</NIT>
+           <nombre>Pedro Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456719-4</NIT>
+           <nombre>Juan Muñoz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456719-5</NIT>
+           <nombre>Marta Muñoz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456719-6</NIT>
+           <nombre>Luis Romero</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456719-7</NIT>
+           <nombre>Carmen Ruiz</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456719-8</NIT>
+           <nombre>Sofía Navarro</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456719-9</NIT>
+           <nombre>Lucía Sánchez</nombre>
+       </cliente>
+       <cliente>
+           <NIT>123456720-0</NIT>
+           <nombre>Juan García</nombre>
+       </cliente>
+   </clientes>
+   <bancos>
+       <banco>
+           <codigo>001</codigo>
+           <nombre>A1</nombre>
+       </banco>
+       <banco>
+           <codigo>002</codigo>
+           <nombre>A2</nombre>
+       </banco>
+       <banco>
+           <codigo>003</codigo>
+           <nombre>A3</nombre>
+       </banco>
+       <banco>
+           <codigo>004</codigo>
+           <nombre>A4</nombre>
+       </banco>
+       <banco>
+           <codigo>005</codigo>
+           <nombre>A5</nombre>
+       </banco>
+       <banco>
+           <codigo>006</codigo>
+           <nombre>A6</nombre>
+       </banco>
+       <banco>
+           <codigo>007</codigo>
+           <nombre>A7</nombre>
+       </banco>
+       <banco>
+           <codigo>008</codigo>
+           <nombre>A8</nombre>
+       </banco>
+       <banco>
+           <codigo>009</codigo>
+           <nombre>A9</nombre>
+       </banco>
+       <banco>
+           <codigo>010</codigo>
+           <nombre>B1</nombre>
+       </banco>
+       <banco>
+           <codigo>011</codigo>
+           <nombre>B2</nombre>
+       </banco>
+       <banco>
+           <codigo>012</codigo>
+           <nombre>B3</nombre>
+       </banco>
+       <banco>
+           <codigo>013</codigo>
+           <nombre>B4</nombre>
+       </banco>
+       <banco>
+           <codigo>014</codigo>
+           <nombre>B5</nombre>
+       </banco>
+       <banco>
+           <codigo>015</codigo>
+           <nombre>B6</nombre>
+       </banco>
+       <banco>
+           <codigo>016</codigo>
+           <nombre>B7</nombre>
+       </banco>
+       <banco>
+           <codigo>017</codigo>
+           <nombre>B8</nombre>
+       </banco>
+       <banco>
+           <codigo>018</codigo>
+           <nombre>B9</nombre>
+       </banco>
+       <banco>
+           <codigo>019</codigo>
+           <nombre>C1</nombre>
+       </banco>
+       <banco>
+           <codigo>020</codigo>
+           <nombre>C2</nombre>
+       </banco>
+       <banco>
+           <codigo>021</codigo>
+           <nombre>C3</nombre>
+       </banco>
+       <banco>
+           <codigo>022</codigo>
+           <nombre>C4</nombre>
+       </banco>
+       <banco>
+           <codigo>023</codigo>
+           <nombre>C5</nombre>
+       </banco>
+       <banco>
+           <codigo>024</codigo>
+           <nombre>C6</nombre>
+       </banco>
+       <banco>
+           <codigo>025</codigo>
+           <nombre>C7</nombre>
+       </banco>
+       <banco>
+           <codigo>026</codigo>
+           <nombre>C8</nombre>
+       </banco>
+       <banco>
+           <codigo>027</codigo>
+           <nombre>C9</nombre>
+       </banco>
+       <banco>
+           <codigo>028</codigo>
+           <nombre>D1</nombre>
+       </banco>
+       <banco>
+           <codigo>029</codigo>
+           <nombre>D2</nombre>
+       </banco>
+       <banco>
+           <codigo>030</codigo>
+           <nombre>D3</nombre>
+       </banco>
+       <banco>
+           <codigo>031</codigo>
+           <nombre>D4</nombre>
+       </banco>
+       <banco>
+           <codigo>032</codigo>
+           <nombre>D5</nombre>
+       </banco>
+       <banco>
+           <codigo>033</codigo>
+           <nombre>D6</nombre>
+       </banco>
+       <banco>
+           <codigo>034</codigo>
+           <nombre>D7</nombre>
+       </banco>
+       <banco>
+           <codigo>035</codigo>
+           <nombre>D8</nombre>
+       </banco>
+       <banco>
+           <codigo>036</codigo>
+           <nombre>D9</nombre>
+       </banco>
+       <banco>
+           <codigo>037</codigo>
+           <nombre>E1</nombre>
+       </banco>
+       <banco>
+           <codigo>038</codigo>
+           <nombre>E2</nombre>
+       </banco>
+       <banco>
+           <codigo>039</codigo>
+           <nombre>E3</nombre>
+       </banco>
+       <banco>
+           <codigo>040</codigo>
+           <nombre>E4</nombre>
+       </banco>
+       <banco>
+           <codigo>041</codigo>
+           <nombre>E5</nombre>
+       </banco>
+       <banco>
+           <codigo>042</codigo>
+           <nombre>E6</nombre>
+       </banco>
+       <banco>
+           <codigo>043</codigo>
+           <nombre>E7</nombre>
+       </banco>
+       <banco>
+           <codigo>044</codigo>
+           <nombre>E8</nombre>
+       </banco>
+       <banco>
+           <codigo>045</codigo>
+           <nombre>E9</nombre>
+       </banco>
+       <banco>
+           <codigo>046</codigo>
+           <nombre>F1</nombre>
+       </banco>
+       <banco>
+           <codigo>047</codigo>
+           <nombre>F2</nombre>
+       </banco>
+       <banco>
+           <codigo>048</codigo>
+           <nombre>F3</nombre>
+       </banco>
+       <banco>
+           <codigo>049</codigo>
+           <nombre>F4</nombre>
+       </banco>
+       <banco>
+           <codigo>050</codigo>
+           <nombre>F5</nombre>
+       </banco>
+       <banco>
+           <codigo>051</codigo>
+           <nombre>F6</nombre>
+       </banco>
+       <banco>
+           <codigo>052</codigo>
+           <nombre>F7</nombre>
+       </banco>
+       <banco>
+           <codigo>053</codigo>
+           <nombre>F8</nombre>
+       </banco>
+       <banco>
+           <codigo>054</codigo>
+           <nombre>F9</nombre>
+       </banco>
+       <banco>
+           <codigo>055</codigo>
+           <nombre>G1</nombre>
+       </banco>
+       <banco>
+           <codigo>056</codigo>
+           <nombre>G2</nombre>
+       </banco>
+       <banco>
+           <codigo>057</codigo>
+           <nombre>G3</nombre>
+       </banco>
+       <banco>
+           <codigo>058</codigo>
+           <nombre>G4</nombre>
+       </banco>
+       <banco>
+           <codigo>059</codigo>
+           <nombre>G5</nombre>
+       </banco>
+       <banco>
+           <codigo>060</codigo>
+           <nombre>G6</nombre>
+       </banco>
+       <banco>
+           <codigo>061</codigo>
+           <nombre>G7</nombre>
+       </banco>
+       <banco>
+           <codigo>062</codigo>
+           <nombre>G8</nombre>
+       </banco>
+       <banco>
+           <codigo>063</codigo>
+           <nombre>G9</nombre>
+       </banco>
+       <banco>
+           <codigo>064</codigo>
+           <nombre>H1</nombre>
+       </banco>
+       <banco>
+           <codigo>065</codigo>
+           <nombre>H2</nombre>
+       </banco>
+       <banco>
+           <codigo>066</codigo>
+           <nombre>H3</nombre>
+       </banco>
+       <banco>
+           <codigo>067</codigo>
+           <nombre>H4</nombre>
+       </banco>
+       <banco>
+           <codigo>068</codigo>
+           <nombre>H5</nombre>
+       </banco>
+       <banco>
+           <codigo>069</codigo>
+           <nombre>H6</nombre>
+       </banco>
+       <banco>
+           <codigo>070</codigo>
+           <nombre>H7</nombre>
+       </banco>
+       <banco>
+           <codigo>071</codigo>
+           <nombre>H8</nombre>
+       </banco>
+       <banco>
+           <codigo>072</codigo>
+           <nombre>H9</nombre>
+       </banco>
+       <banco>
+           <codigo>073</codigo>
+           <nombre>I1</nombre>
+       </banco>
+       <banco>
+           <codigo>074</codigo>
+           <nombre>I2</nombre>
+       </banco>
+       <banco>
+           <codigo>075</codigo>
+           <nombre>I3</nombre>
+       </banco>
+       <banco>
+           <codigo>076</codigo>
+           <nombre>I4</nombre>
+       </banco>
+       <banco>
+           <codigo>077</codigo>
+           <nombre>I5</nombre>
+       </banco>
+       <banco>
+           <codigo>078</codigo>
+           <nombre>I6</nombre>
+       </banco>
+       <banco>
+           <codigo>079</codigo>
+           <nombre>I7</nombre>
+       </banco>
+       <banco>
+           <codigo>080</codigo>
+           <nombre>I8</nombre>
+       </banco>
+       <banco>
+           <codigo>081</codigo>
+           <nombre>I9</nombre>
+       </banco>
+       <banco>
+           <codigo>082</codigo>
+           <nombre>J1</nombre>
+       </banco>
+       <banco>
+           <codigo>083</codigo>
+           <nombre>J2</nombre>
+       </banco>
+       <banco>
+           <codigo>084</codigo>
+           <nombre>J3</nombre>
+       </banco>
+       <banco>
+           <codigo>085</codigo>
+           <nombre>J4</nombre>
+       </banco>
+       <banco>
+           <codigo>086</codigo>
+           <nombre>J5</nombre>
+       </banco>
+       <banco>
+           <codigo>087</codigo>
+           <nombre>J6</nombre>
+       </banco>
+       <banco>
+           <codigo>088</codigo>
+           <nombre>J7</nombre>
+       </banco>
+       <banco>
+           <codigo>089</codigo>
+           <nombre>J8</nombre>
+       </banco>
+       <banco>
+           <codigo>090</codigo>
+           <nombre>J9</nombre>
+       </banco>
+       <banco>
+           <codigo>091</codigo>
+           <nombre>K1</nombre>
+       </banco>
+       <banco>
+           <codigo>092</codigo>
+           <nombre>K2</nombre>
+       </banco>
+       <banco>
+           <codigo>093</codigo>
+           <nombre>K3</nombre>
+       </banco>
+       <banco>
+           <codigo>094</codigo>
+           <nombre>K4</nombre>
+       </banco>
+       <banco>
+           <codigo>095</codigo>
+           <nombre>K5</nombre>
+       </banco>
+       <banco>
+           <codigo>096</codigo>
+           <nombre>K6</nombre>
+       </banco>
+       <banco>
+           <codigo>097</codigo>
+           <nombre>K7</nombre>
+       </banco>
+       <banco>
+           <codigo>098</codigo>
+           <nombre>K8</nombre>
+       </banco>
+       <banco>
+           <codigo>099</codigo>
+           <nombre>K9</nombre>
+       </banco>
+       <banco>
+           <codigo>100</codigo>
+           <nombre>L1</nombre>
+       </banco>
+   </bancos>
+</config>

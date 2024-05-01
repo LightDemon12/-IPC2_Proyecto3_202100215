@@ -1,0 +1,307 @@
+<?xml version='1.0'?>
+<transacciones>
+   <facturas>
+       <factura>
+           <numeroFactura>fact-000</numeroFactura>
+           <NITcliente>12345670-7</NITcliente>
+           <fecha>21/12/2024</fecha>
+           <valor>1430</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-001</numeroFactura>
+           <NITcliente>12345670/8</NITcliente>
+           <fecha>21-12/2024</fecha>
+           <valor>1357</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-002</numeroFactura>
+           <NITcliente>12345670-3</NITcliente>
+           <fecha>24/03/2024</fecha>
+           <valor>1979</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-003</numeroFactura>
+           <NITcliente>12345670-9</NITcliente>
+           <fecha>21/05/2024</fecha>
+           <valor>332</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-004</numeroFactura>
+           <NITcliente>12345670-1</NITcliente>
+           <fecha>02/12/2024</fecha>
+           <valor>1081</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-005</numeroFactura>
+           <NITcliente>12345670-1</NITcliente>
+           <fecha>20/11/2024</fecha>
+           <valor>1602</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-006</numeroFactura>
+           <NITcliente>12345670-4</NITcliente>
+           <fecha>06/05/2024</fecha>
+           <valor>986</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-007</numeroFactura>
+           <NITcliente>12345670-5</NITcliente>
+           <fecha>26/05/2024</fecha>
+           <valor>1833</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-008</numeroFactura>
+           <NITcliente>12345670-2</NITcliente>
+           <fecha>16/01/2024</fecha>
+           <valor>379</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-009</numeroFactura>
+           <NITcliente>12345670-7</NITcliente>
+           <fecha>05/03/2024</fecha>
+           <valor>1681</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-010</numeroFactura>
+           <NITcliente>12345670-8</NITcliente>
+           <fecha>12/07/2024</fecha>
+           <valor>363</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-011</numeroFactura>
+           <NITcliente>12345670-5</NITcliente>
+           <fecha>30/01/2024</fecha>
+           <valor>1694</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-012</numeroFactura>
+           <NITcliente>12345670-8</NITcliente>
+           <fecha>05/10/2024</fecha>
+           <valor>1853</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-013</numeroFactura>
+           <NITcliente>12345670-4</NITcliente>
+           <fecha>24/09/2024</fecha>
+           <valor>1960</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-014</numeroFactura>
+           <NITcliente>12345670-6</NITcliente>
+           <fecha>18/01/2024</fecha>
+           <valor>1110</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-015</numeroFactura>
+           <NITcliente>12345670-4</NITcliente>
+           <fecha>26/09/2024</fecha>
+           <valor>1937</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-016</numeroFactura>
+           <NITcliente>12345670-5</NITcliente>
+           <fecha>08/06/2024</fecha>
+           <valor>1425</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-017</numeroFactura>
+           <NITcliente>12345670-10</NITcliente>
+           <fecha>16/05/2024</fecha>
+           <valor>460</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-018</numeroFactura>
+           <NITcliente>12345670-7</NITcliente>
+           <fecha>08/12/2024</fecha>
+           <valor>956</valor>
+       </factura>
+       <factura>
+           <numeroFactura>fact-019</numeroFactura>
+           <NITcliente>12345670-8</NITcliente>
+           <fecha>13/09/2024</fecha>
+           <valor>383</valor>
+       </factura>
+   </facturas>
+   <pagos>
+       <pago>
+           <codigoBanco>003</codigoBanco>
+           <fecha>la fecha es 28/10/2024</fecha>
+           <NITcliente>12345670-3</NITcliente>
+           <valor>1006</valor>
+       </pago>
+       <pago>
+           <codigoBanco>005</codigoBanco>
+           <fecha>la fecha es 03/01/2024</fecha>
+           <NITcliente>12345670-5</NITcliente>
+           <valor>1689</valor>
+       </pago>
+       <pago>
+           <codigoBanco>010</codigoBanco>
+           <fecha>la fecha es 08/11/2024</fecha>
+           <NITcliente>12345670-2</NITcliente>
+           <valor>1523</valor>
+       </pago>
+       <pago>
+           <codigoBanco>010</codigoBanco>
+           <fecha>la fecha es 10/05/2024</fecha>
+           <NITcliente>12345670-6</NITcliente>
+           <valor>1113</valor>
+       </pago>
+       <pago>
+           <codigoBanco>004</codigoBanco>
+           <fecha>la fecha es 02/09/2024</fecha>
+           <NITcliente>12345670-9</NITcliente>
+           <valor>1457</valor>
+       </pago>
+       <pago>
+           <codigoBanco>008</codigoBanco>
+           <fecha>la fecha es 15/06/2024</fecha>
+           <NITcliente>12345670-2</NITcliente>
+           <valor>430</valor>
+       </pago>
+       <pago>
+           <codigoBanco>010</codigoBanco>
+           <fecha>la fecha es 12/12/2024</fecha>
+           <NITcliente>12345670-6</NITcliente>
+           <valor>616</valor>
+       </pago>
+       <pago>
+           <codigoBanco>006</codigoBanco>
+           <fecha>la fecha es 27/03/2024</fecha>
+           <NITcliente>12345670-9</NITcliente>
+           <valor>1123</valor>
+       </pago>
+       <pago>
+           <codigoBanco>005</codigoBanco>
+           <fecha>la fecha es 07/05/2024</fecha>
+           <NITcliente>12345670-10</NITcliente>
+           <valor>1912</valor>
+       </pago>
+       <pago>
+           <codigoBanco>002</codigoBanco>
+           <fecha>la fecha es 05/08/2024</fecha>
+           <NITcliente>12345670-9</NITcliente>
+           <valor>787</valor>
+       </pago>
+       <pago>
+           <codigoBanco>003</codigoBanco>
+           <fecha>la fecha es 13/02/2024</fecha>
+           <NITcliente>12345670-7</NITcliente>
+           <valor>1097</valor>
+       </pago>
+       <pago>
+           <codigoBanco>007</codigoBanco>
+           <fecha>la fecha es 09/09/2024</fecha>
+           <NITcliente>12345670-2</NITcliente>
+           <valor>741</valor>
+       </pago>
+       <pago>
+           <codigoBanco>005</codigoBanco>
+           <fecha>la fecha es 22/01/2024</fecha>
+           <NITcliente>12345670-7</NITcliente>
+           <valor>1079</valor>
+       </pago>
+       <pago>
+           <codigoBanco>005</codigoBanco>
+           <fecha>la fecha es 14/04/2024</fecha>
+           <NITcliente>12345670-5</NITcliente>
+           <valor>1031</valor>
+       </pago>
+       <pago>
+           <codigoBanco>008</codigoBanco>
+           <fecha>la fecha es 25/02/2024</fecha>
+           <NITcliente>12345670-8</NITcliente>
+           <valor>1076</valor>
+       </pago>
+       <pago>
+           <codigoBanco>003</codigoBanco>
+           <fecha>la fecha es 24/05/2024</fecha>
+           <NITcliente>12345670-9</NITcliente>
+           <valor>1731</valor>
+       </pago>
+       <pago>
+           <codigoBanco>001</codigoBanco>
+           <fecha>la fecha es 13/12/2024</fecha>
+           <NITcliente>12345670-5</NITcliente>
+           <valor>1918</valor>
+       </pago>
+       <pago>
+           <codigoBanco>001</codigoBanco>
+           <fecha>la fecha es 28/04/2024</fecha>
+           <NITcliente>12345670-2</NITcliente>
+           <valor>423</valor>
+       </pago>
+       <pago>
+           <codigoBanco>006</codigoBanco>
+           <fecha>la fecha es 05/08/2024</fecha>
+           <NITcliente>12345670-1</NITcliente>
+           <valor>1265</valor>
+       </pago>
+       <pago>
+           <codigoBanco>005</codigoBanco>
+           <fecha>la fecha es 11/05/2024</fecha>
+           <NITcliente>12345670-7</NITcliente>
+           <valor>620</valor>
+       </pago>
+       <pago>
+           <codigoBanco>008</codigoBanco>
+           <fecha>la fecha es 01/03/2024</fecha>
+           <NITcliente>12345670-5</NITcliente>
+           <valor>1595</valor>
+       </pago>
+       <pago>
+           <codigoBanco>008</codigoBanco>
+           <fecha>la fecha es 23/04/2024</fecha>
+           <NITcliente>12345670-1</NITcliente>
+           <valor>1794</valor>
+       </pago>
+       <pago>
+           <codigoBanco>008</codigoBanco>
+           <fecha>la fecha es 08/09/2024</fecha>
+           <NITcliente>12345670-2</NITcliente>
+           <valor>1448</valor>
+       </pago>
+       <pago>
+           <codigoBanco>007</codigoBanco>
+           <fecha>la fecha es 17/10/2024</fecha>
+           <NITcliente>12345670-1</NITcliente>
+           <valor>1457</valor>
+       </pago>
+       <pago>
+           <codigoBanco>001</codigoBanco>
+           <fecha>la fecha es 07/01/2024</fecha>
+           <NITcliente>12345670-1</NITcliente>
+           <valor>1273</valor>
+       </pago>
+       <pago>
+           <codigoBanco>006</codigoBanco>
+           <fecha>la fecha es 09/10/2024</fecha>
+           <NITcliente>12345670-5</NITcliente>
+           <valor>356</valor>
+       </pago>
+       <pago>
+           <codigoBanco>006</codigoBanco>
+           <fecha>la fecha es 12/05/2024</fecha>
+           <NITcliente>12345670-10</NITcliente>
+           <valor>1432</valor>
+       </pago>
+       <pago>
+           <codigoBanco>007</codigoBanco>
+           <fecha>la fecha es 17/02/2024</fecha>
+           <NITcliente>12345670-5</NITcliente>
+           <valor>300</valor>
+       </pago>
+       <pago>
+           <codigoBanco>008</codigoBanco>
+           <fecha>la fecha es 29/05/2024</fecha>
+           <NITcliente>12345670-8</NITcliente>
+           <valor>1828</valor>
+       </pago>
+       <pago>
+           <codigoBanco>001</codigoBanco>
+           <fecha>la fecha es 10/08/2024</fecha>
+           <NITcliente>12345670-8</NITcliente>
+           <valor>682</valor>
+       </pago>
+   </pagos>
+</transacciones>

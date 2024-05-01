@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <respuesta>
 	<cliente>
-		<creados>4</creados>
+		<creados>200</creados>
 	</cliente>
 	<banco>
-		<creados>4</creados>
+		<creados>100</creados>
 	</banco>
 </respuesta>
